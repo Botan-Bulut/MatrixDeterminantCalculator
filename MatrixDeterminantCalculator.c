@@ -9,29 +9,14 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+double determinant_calc(int n, double *matrix){
+	
+	if (n == 2){
 
-double determinant_calc(int row, int col, double **matrix){
-
-	int i;
-
-	if (row == 2 && col == 2){
-
-		return (matrix[0][0] * matrix[1][1]) - (matrix[0][1] * matrix[1][0]);  
+		return (matrix[0] * matrix[3]) - (matrix[1] * matrix[2]);  
 	}
 
-	else if (row == 3 && col == 3){
-
-		double arr[3] = {}
-
-		for (i = 0; i < 3; ++i){
-
-
-
-		}
-		
-		return matrix[0][0] * determinant_calc((row -1), (col - 1))
-
-	}
+	
 }
 
 
@@ -40,8 +25,8 @@ double determinant_calc(int row, int col, double **matrix){
 
 int main(void){
 
-	int n, i, j; // Matrix is a square matrix (nxn).
-	double **matrix, determinant;
+	int n, i, j, k = 0, elements; // Matrix is a square matrix (nxn).
+	double **matrix, *rawmatrix, d;
 
 // Determining the size of matrix by user input.
 
@@ -57,11 +42,13 @@ int main(void){
 
 	if (n < 1){
 
-		printf("Input error. Exiting...");
+		printf("Input error. Exiting...\n");
 		exit(1);
 
 	}
 	
+	elements = n * n; // Total number of elements in the array.
+
 // Dynamically allocating the memory to generate the matrix for a given user input.
 
 	matrix = (double **) malloc(n * sizeof(double));
@@ -128,12 +115,30 @@ int main(void){
 		}
 	}
 /**********************************************************/
+
+	rawmatrix = (double *) malloc(elements * sizeof(double));
+
+	for (i = 0; i < n; ++i){
+
+		for (j = 0; j < n; ++j){
+
+			rawmatrix[k] = *(*(matrix + i) + j);
+
+			++k;
+
+		}
+
+	}
+
+	for (i = 0; i < elements; ++i){
+
+		printf("%.2lf", rawmatrix[i]);
+	}
 	
-	determinant = determinant_calc(n, n, matrix);
+	d = determinant_calc(n, n, rawmatrix);
 
-	printf("Determinant is: %.2lf.", determinant);
+	printf("Determinant is: %.2lf.\n", d);
 
-	printf("\n");
 
 	return 0;
 }
