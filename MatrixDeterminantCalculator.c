@@ -130,9 +130,12 @@ int main(void){
 
 	}
 
+/**Display Raw matrix optional
 	for (i = 0; i < elements; ++i){
 
-		printf("%.2lf", rawmatrix[i]);
+		printf("index %d : %.2lf\n", i, rawmatrix[i]);
+	}
+*/
 	}
 	
 	d = determinant_calc(n, n, rawmatrix);
