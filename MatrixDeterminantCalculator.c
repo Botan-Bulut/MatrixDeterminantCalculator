@@ -136,9 +136,8 @@ int main(void){
 		printf("index %d : %.2lf\n", i, rawmatrix[i]);
 	}
 */
-	}
 	
-	d = determinant_calc(n, n, rawmatrix);
+	d = determinant_calc(n, rawmatrix);
 
 	printf("Determinant is: %.2lf.\n", d);
 
