@@ -117,7 +117,7 @@ int main(void)
 		}
 	}
 
-	printf("\nMatrix entered is: \n");
+	printf("\nMatrix entered is: \n\n");
 
 	for(i = 0; i < n; ++i)
 	{
