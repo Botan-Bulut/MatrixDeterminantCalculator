@@ -133,7 +133,7 @@ int main(void)
 
 	determinant = determinant_calculator(matrix, n);
 
-	printf("\nDeterminant is: %.2lf\n--------------------------------------------------\n\n", determinant);
+	printf("\nDeterminant is: %.2lf.\n--------------------------------------------------\n\n", determinant);
 
 	return 0;
 }
