@@ -121,7 +121,7 @@ int main(void)
 
 	for(i = 0; i < n; ++i)
 	{
-		printf("| ");
+		printf("\t| ");
 
 		for(j = 0; j < n; ++j)
 		{
