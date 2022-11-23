@@ -24,7 +24,7 @@ void row_swap(double **matrix, int n, int r1, int r2)
 double determinant_calculator(double **matrix, int n)
 {
 	double value, determinant;
-	int l1, l2, l3, c = 0;
+	int l1, l2, l3;
 
 	for(l1 = 0; l1 < n; ++l1)
 	{
