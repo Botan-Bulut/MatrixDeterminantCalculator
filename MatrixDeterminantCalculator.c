@@ -80,6 +80,8 @@ double determinant_calculator(double **matrix, int n)
 			
 			if((l1 % 2) == 0) { value = (double) ((matrix[l1][0]) * (determinant_calculator(submatrix, (n - 1)))); determinant = determinant + value;}
 			else { value = (double) ((matrix[l1][0]) * (determinant_calculator(submatrix, (n - 1)))); determinant = determinant - value;}
+			
+			free(copymatrix); free(submatrix);
 		}
 	}
 	
